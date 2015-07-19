@@ -50,13 +50,13 @@ RedisToken.prototype.set = function(data, done) {
 		};
 
 		// Prefix key
-		var token = this.opts.prefix + token;
+		var key = this.opts.prefix + token;
 
 		// Expires or not?
 		if (this.opts.expires) {
-			this.conn.setex(token, this.opts.expires, data, _done);
+			this.conn.setex(key, this.opts.expires, data, _done);
 		} else {
-			this.conn.set(token, data, _done);
+			this.conn.set(key, data, _done);
 		}
 		
 	}.bind(this));
