@@ -16,9 +16,9 @@
   },
   "homepage": "https://github.com/MusicMapIo/redistoken",
   "scripts": {
-	"pretest": "npm run docker-redis-up",
+    "pretest": "npm run docker-redis-up",
     "test": "REDIS_HOST=\"192.168.59.103\" REDIS_PORT=\"6370\" mocha",
-	"posttest": "npm run docker-redis-down",
+    "posttest": "npm run docker-redis-down",
     "docker-redis-pull": "docker pull redis",
     "docker-redis-up": "docker run --name redis-token -p 6370:6379 -dP redis",
     "docker-redis-down": "docker stop redis-token && docker rm redis-token"
@@ -27,6 +27,7 @@
   "license": "ISC",
   "dependencies": {
     "random-token-generator": "^1.0.2",
-    "redis": "^0.12.1"
+    "redis": "^0.12.1",
+    "util": "^0.10.3"
   }
 }
